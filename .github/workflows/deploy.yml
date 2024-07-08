@@ -22,7 +22,7 @@ jobs:
 
       # Install the Snowflake CLI (ensure version compatibility)
       - name: Install snowcli
-        run: pip install snowflake-cli-labs~=2.1
+        run: pip install snowflake-cli-labs~=2.5.0
 
       # Install 'yq' for parsing the snowflake.yml file
       - name: Install yq
