@@ -63,4 +63,4 @@ jobs:
       # Deploy the Streamlit app using the Snowflake CLI
       - name: Deploy the streamlit app
         shell: bash
-        run: snow streamlit deploy --replace >> $GITHUB_STEP_SUMMARY
+        run: snow streamlit deploy --debug --replace >> $GITHUB_STEP_SUMMARY
