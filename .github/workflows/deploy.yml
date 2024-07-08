@@ -58,7 +58,7 @@ jobs:
           schema = "$SCHEMA"
           role = "$ROLE"
           EOF
-          chmod 0600 .snowflake/config.toml
+          chmod 0600 ~/.snowflake/config.toml
 
       # Deploy the Streamlit app using the Snowflake CLI
       - name: Deploy the streamlit app
