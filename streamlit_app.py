@@ -12,6 +12,8 @@ query = " SELECT * FROM ll_prod_raw_zone.information_schema.tables "
 df = pd.DataFrame(session.sql(query).collect())
 st.write(df)
 
+st.write("Hello World! I am coming from Github, after originating at local FS.")
+
 # Get the current credentials
 
 # Use an interactive slider to get user input
