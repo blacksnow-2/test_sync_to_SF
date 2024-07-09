@@ -2,6 +2,22 @@ import os
 from dotenv import load_dotenv
 import requests
 import json
+import subprocess
+
+
+commit_message = input("Enter commit message: ")
+try:
+    subprocess.run(["git", "add", "."], check=True)
+    subprocess.run(["git", "commit", "-m", commit_message], check=True)
+    subprocess.run(["git", "push"], check=True)
+    print("Git push successful.")
+except subprocess.CalledProcessError as e:
+    print(f"Error executing Git commands: {e}")
+    exit(1)
+
+
+
+
 
 # Load environment variables from .env file
 load_dotenv()
