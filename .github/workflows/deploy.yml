@@ -78,5 +78,5 @@ jobs:
       - name: Deploy the streamlit app
         shell: bash
         run: |
-          snowsql -f table_dept_mapping.csv -o table_dept_mapping.csv
+          snow cp table_dept_mapping.csv @~/stage/STREAMLIT
           snow streamlit deploy --debug --replace >> $GITHUB_STEP_SUMMARY
