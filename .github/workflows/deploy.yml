@@ -1,10 +1,22 @@
 name: Deploy App via snowcli
 
 # Trigger the workflow on a push to the 'main' branch
+
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      snowflake_account:
+        description: 'Snowflake Account'
+        required: true
+      snowflake_user:
+        description: 'Snowflake User'
+        required: true
+      snowflake_password:
+        description: 'Snowflake Password'
+        required: true
+      snowflake_role:
+        description: 'Snowflake Role'
+        required: true
 
 jobs:
   deploy:
@@ -44,10 +56,10 @@ jobs:
       # Configure the Snowflake CLI with necessary credentials and settings
       - name: Create snowcli config
         env:
-          SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
-          SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
-          SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
-          SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
+          SNOWFLAKE_ACCOUNT: ${{ github.event.inputs.snowflake_account }}
+          SNOWFLAKE_USER: ${{ github.event.inputs.snowflake_user }}
+          SNOWFLAKE_PASSWORD: ${{ github.event.inputs.snowflake_password }}
+          SNOWFLAKE_ROLE: ${{ github.event.inputs.snowflake_role }}
         run: |
           mkdir -p ~/.snowflake
           cat << EOF > ~/.snowflake/config.toml
