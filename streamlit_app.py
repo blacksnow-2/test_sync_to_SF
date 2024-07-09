@@ -14,6 +14,10 @@ st.write(df)
 
 st.write("Hello World! I am coming from Github, after originating at local FS.")
 
+
+dept_tables = pd.read_csv('table_dept_mapping.csv')
+st.write(dept_tables)
+
 # Get the current credentials
 
 # Use an interactive slider to get user input
