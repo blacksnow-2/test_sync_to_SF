@@ -7,12 +7,12 @@ from snowflake.snowpark.context import get_active_session
 session = get_active_session()
 
 # Write directly to the app
-st.title("Example Streamlit App :balloon:")
-query = " SELECT TABLE_NAME, ROW_COUNT FROM ll_prod_raw_zone.information_schema.tables "
+# st.title("Example Streamlit App :balloon:")
+query = " SELECT * FROM LL_PROD_RAW_ZONE.PUBLIC.EXTRA_TABLES "
 df = pd.DataFrame(session.sql(query).collect())
 st.write(df)
 
-st.write("Hello World! I am coming from Github, after originating at local FS.")
+# st.write("Hello World! I am coming from Github, after originating at local FS.")
 
 
 # dept_tables = pd.read_csv('table_dept_mapping.csv')
