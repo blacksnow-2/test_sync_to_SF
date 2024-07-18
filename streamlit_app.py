@@ -8,7 +8,7 @@ session = get_active_session()
 
 # Write directly to the app
 # st.title("Example Streamlit App :balloon:")
-query = " SELECT * FROM LL_PROD_RAW_ZONE.PUBLIC.EXTRA_TABLES "
+query = "SELECT * FROM EXTRA_TABLES;"
 df = pd.DataFrame(session.sql(query).collect())
 st.write(df)
 
