@@ -56,7 +56,7 @@ def trigger_workflow():
 
     # GitHub repository details
     REPO_OWNER = "rajat-ll"
-    REPO_NAME = "streamlit_test"
+    REPO_NAME = "snowflake-ui-test"
 
     # Trigger the GitHub Actions workflow dispatch event
     url = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/actions/workflows/deploy.yml/dispatches"
