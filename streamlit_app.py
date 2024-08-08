@@ -13,7 +13,7 @@ st.title("Example Streamlit App :balloon:")
 # df = pd.DataFrame(session.sql(query).collect())
 # st.write(df)
 
-st.write("Hello World! I am coming from Github, after originating at local FS.")
+st.write("Hello World I am Rajat Tiwari from India ")
 
 
 # dept_tables = pd.read_csv('table_dept_mapping.csv')

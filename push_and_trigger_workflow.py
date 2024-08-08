@@ -58,8 +58,8 @@ def trigger_workflow():
         exit(1)
 
     # GitHub repository details
-    REPO_OWNER = "blacksnow-2"
-    REPO_NAME = "test_sync_to_SF"
+    REPO_OWNER = "rajat-ll"
+    REPO_NAME = "streamlit_test"
 
     # Trigger the GitHub Actions workflow dispatch event
     url = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/actions/workflows/deploy.yml/dispatches"
@@ -71,6 +71,7 @@ def trigger_workflow():
         "ref": "main",
         "inputs": {
             "snowflake_account": SNOWFLAKE_ACCOUNT,
+            
             "snowflake_user": SNOWFLAKE_USER,
             "snowflake_password": SNOWFLAKE_PASSWORD,
             "snowflake_role": SNOWFLAKE_ROLE
