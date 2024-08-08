@@ -38,21 +38,18 @@ def push_first():
         print(f"Error executing Git commands: {e}")
         exit(1)
 
-
-
-
 def trigger_workflow():
-# Load environment variables from .env file
+    # Load environment variables from .env file
     load_dotenv()
 
-# Get environment variables
+    # Get environment variables
     SNOWFLAKE_ACCOUNT = os.getenv('SNOWFLAKE_ACCOUNT')
     SNOWFLAKE_USER = os.getenv('SNOWFLAKE_USER')
     SNOWFLAKE_PASSWORD = os.getenv('SNOWFLAKE_PASSWORD')
     SNOWFLAKE_ROLE = os.getenv('SNOWFLAKE_ROLE')
     GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
 
-# Ensure the environment variables are set
+    # Ensure the environment variables are set
     if not all([SNOWFLAKE_ACCOUNT, SNOWFLAKE_USER, SNOWFLAKE_PASSWORD, SNOWFLAKE_ROLE, GITHUB_TOKEN]):
         print("Please set your credentials in the .env file.")
         exit(1)
@@ -71,7 +68,6 @@ def trigger_workflow():
         "ref": "main",
         "inputs": {
             "snowflake_account": SNOWFLAKE_ACCOUNT,
-            
             "snowflake_user": SNOWFLAKE_USER,
             "snowflake_password": SNOWFLAKE_PASSWORD,
             "snowflake_role": SNOWFLAKE_ROLE
@@ -88,6 +84,6 @@ def trigger_workflow():
 def main():
     push_first()
     trigger_workflow()
-        
+
 if __name__ == "__main__":
     main()
